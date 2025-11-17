@@ -1,0 +1,16 @@
+{
+  "emails": [
+    {
+      "subject": "Incident de sécurité : fuite de données sensibles détectée",
+      "content": "Bonjour, Une anomalie a été détectée dans le système d’authentification interne. Un accès non autorisé a été enregistré vers la base de données des clients (table « clients_confidentiels ») à 02h12. Les données sensibles (numéros de sécurité sociale, coordonnées bancaires) ont pu être extraites. Nous avons immédiatement bloqué l’accès et lancé une enquête. Je sollicite votre intervention urgente pour sécuriser les comptes, appliquer un patch de sécurité et informer les parties concernées. Merci de traiter cette demande en priorité absolue. Cordialement, Élodie Rousseau."
+    },
+    {
+      "subject": "Arrêt du serveur de production – impact sur le portail client",
+      "content": "Bonjour, Le serveur de production (IP 192.168.10.5) est hors service depuis 14h30. Les utilisateurs ne peuvent plus accéder au portail client, ce qui empêche la prise de rendez-vous et la consultation des factures. L’équipe de développement a signalé un crash du processus de base de données. Veuillez intervenir immédiatement pour restaurer le service. Merci de me tenir informé de la progression. Salutations, Marc Lemoine."
+    },
+    {
+      "subject": "Demande de licence Office 365 pour le nouveau collaborateur",
+      "content": "Bonjour, Nous venons d’accueillir un nouveau collaborateur, Pierre Martin, qui commencera son contrat le 1er décembre. Il aura besoin d’une licence Office 365 Pro Plus pour accéder aux documents partagés. Pourriez-vous lui attribuer une licence dès que possible afin qu’il puisse commencer à travailler sans délai ? Merci. Cordialement, Sophie Bernard."
+    }
+  ]
+}
