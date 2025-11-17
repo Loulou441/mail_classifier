@@ -81,7 +81,7 @@ def main():
         except Exception as e:
             print(f"Erreur sur le mail {m['id']}: {e}")
 
-    print(emails_data[0])
+    return emails_data
 
 if __name__ == '__main__':
     main()
