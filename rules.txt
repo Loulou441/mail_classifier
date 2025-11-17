@@ -1,0 +1,28 @@
+import re
+
+# Expressions par catégorie
+RULES = {
+
+    "Problème technique informatique": r"(ordinateur|pc|portable|imprimante|scanner|souris|clavier|réseau|wifi|serveur|panne|erreur système|plantage|écran bleu|matériel|logiciel|crash|réinstallation|configuration|maintenance|connexion instable)",
+    "Demande administrative": r"(attestation|contrat|bulletin|paiement|facture|reçu|note de frais|déclaration|certificat|autorisation|validation|dossier|inscription|demande officielle|formulaire|demande de document|congés|absence|ordre de mission|régularisation|RH|ressources humaines|administratif)",
+    "Problème d'accès /Authentification": r"(mot de passe|connexion|login|identifiant|authentification|bloqué|verrouillé|accès refusé|impossible de se connecter|compte|2fa|otp|sso|oublié|session expirée|réinitialisation|reset)",
+    "Demande de support utilisateur": r"(aide|assistance|support|besoin d'aide|question|formation|information|guide|comment|explication|tutoriel|problème utilisateur|incident mineur|demande d'assistance|besoin de support|demande d'aide|clarification)",
+    "Bug ou dysfonctionnement d'un service": r"(bug|erreur|dysfonctionnement|incident|anomalie|fonction ne marche pas|service indisponible|problème avec|ne fonctionne pas|ko|hs|retour d’erreur|message d’erreur|comportement inattendu|blocage fonctionnel|crash application)"
+}
+
+CATEGORIES = ["Problème technique informatique", "Demande administrative", "Problème d'accès /Authentification", "Demande de support utilisateur", "Bug ou dysfonctionnement d'un service"]
+
+TICKET_ID_PAT = re.compile(r'\b(TCK-\d+)\b', re.IGNORECASE)
+
+# Les Niveaux d'urgence ---
+
+URGENCY_LEVELS = {
+    "Critique": r"(urgent|bloquant|production|panne totale|tout le monde|impossible de travailler|site indisponible|système à l'arrêt|crash total|incident majeur|impact global|urgence absolue)",
+    "Élevé": r"(important|urgence|impact élevé|problème récurrent|ralentissement général|impact fort|priorité haute|haute priorité|affecte plusieurs utilisateurs|impact significatif)",
+    "Modéré": r"(ralentissement|souci|problème mineur|partiel|incomplet|impact limité|incident ponctuel|gêne occasionnelle|moyen impact)",
+    "Faible": r"(demande d'information|question simple|besoin d’aide|amélioration|suggestion|changement mineur|non bloquant|petit souci|non urgent)",
+    "Anodine": r"(remarque|commentaire|observation|remerciement|aucun problème|simple)
+}
+
+
+
