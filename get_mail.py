@@ -30,7 +30,7 @@ def get_service():
     return service
 
 def list_message_ids(service, user_id='me', q='from:horairyhakim@gmail.com'):
-    """Retourne tous les IDs de messages, en gérant la pagination"""
+    """Get all IDs messages, with pagination"""
     all_ids = []
     request = service.users().messages().list(userId=user_id, q=q, maxResults=500)
     while request:
@@ -41,41 +41,47 @@ def list_message_ids(service, user_id='me', q='from:horairyhakim@gmail.com'):
         request = service.users().messages().list_next(request, response)
     return all_ids
 
+
 def get_message(service, msg_id, user_id='me'):
-    """Récupère le message complet (raw) et le parse en objet email."""
+    """Get one mail and parses it"""
     msg = service.users().messages().get(userId=user_id, id=msg_id, format='raw').execute()
     raw = base64.urlsafe_b64decode(msg['raw'])
     email_obj = BytesParser(policy=policy.default).parsebytes(raw)
-    return email_obj
+
+    # Mail subject
+    subject = email_obj['subject']
+    # Mail body
+    body = ""
+    if email_obj.is_multipart():
+        for part in email_obj.walk():
+            ctype = part.get_content_type()
+            if ctype == 'text/plain' and part.get_content_disposition() in (None, 'inline'):
+                body = part.get_content().strip()
+                break
+    else:
+        body = email_obj.get_content().strip()
+
+    return {
+        "subject": subject,
+        "body": body
+    }
 
 def main():
     service = get_service()
-    # Récupérer les mails
-    ids = list_message_ids(service)
-    print(f"Trouvé {len(ids)} messages.")
-    for m in ids:
-        msg = get_message(service, m['id'])
-        # Affiche sujet, de, date et début du corps
-        subject = msg['subject']
-        sender = msg['from']
-        date = msg['date']
-        # Récupérer le texte (plain) si présent
-        body = ""
-        if msg.is_multipart():
-            for part in msg.walk():
-                ctype = part.get_content_type()
-                if ctype == 'text/plain' and part.get_content_disposition() in (None, 'inline'):
-                    body = part.get_content().strip()
-                    break
-        else:
-            body = msg.get_content().strip()
-        print("-----")
-        print(f"From: {sender}")
-        print(f"Subject: {subject}")
-        print(f"Date: {date}")
-        print("Body (début) :", body[:300].replace("\n", " "))
-    print("Terminé.")
-    print(f"Trouvé {len(ids)} messages.")
+    all_ids = list_message_ids(service)
+    print(f"Nombre total de mails : {len(all_ids)}")
+
+    emails_data = []
+    for i, m in enumerate(all_ids, 1):
+        try:
+            email_data = get_message(service, m['id'])
+            emails_data.append(email_data)
+            if i % 50 == 0:
+                print(f"{i} mails récupérés...")
+        except Exception as e:
+            print(f"Erreur sur le mail {m['id']}: {e}")
+
+    print(emails_data[0])
 
 if __name__ == '__main__':
     main()
