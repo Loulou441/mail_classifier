@@ -29,10 +29,17 @@ def get_service():
     service = build('gmail', 'v1', credentials=creds)
     return service
 
-def list_message_ids(service, user_id='me', q=None):
-    """Retourne une liste d'ids de messages. q est une query Gmail (ex: 'is:unread from:boss@example.com')."""
-    response = service.users().messages().list(userId=user_id, q=q).execute()
-    return response.get('messages', [])
+def list_message_ids(service, user_id='me', q='from:horairyhakim@gmail.com'):
+    """Retourne tous les IDs de messages, en gérant la pagination"""
+    all_ids = []
+    request = service.users().messages().list(userId=user_id, q=q, maxResults=500)
+    while request:
+        response = request.execute()
+        messages = response.get('messages', [])
+        all_ids.extend(messages)
+        # Vérifie s’il y a une page suivante
+        request = service.users().messages().list_next(request, response)
+    return all_ids
 
 def get_message(service, msg_id, user_id='me'):
     """Récupère le message complet (raw) et le parse en objet email."""
@@ -68,6 +75,7 @@ def main():
         print(f"Date: {date}")
         print("Body (début) :", body[:300].replace("\n", " "))
     print("Terminé.")
+    print(f"Trouvé {len(ids)} messages.")
 
 if __name__ == '__main__':
     main()
