@@ -1,19 +1,18 @@
-Category rules:
-- Problème technique informatique: any problem about a computer, a server, wifi connexion...,
-- Demande administrative: Any HR request,
-- Problème d'accès /Authentification: Any authentification problem, lost password...
-- Demande de support utilisateur: Any help request,
-- Bug ou dysfonctionnement d'un service: Any raised bug or malfunction, application crash...
+Règles de catégorisation : - Problème technique informatique : tout
+problème lié à un ordinateur, un serveur, une connexion wifi… - Demande
+administrative : toute demande liée aux RH. - Problème d’accès /
+Authentification : tout problème d’authentification, mot de passe
+perdu… - Demande de support utilisateur : toute demande d’aide. - Bug ou
+dysfonctionnement d’un service : tout bug ou dysfonctionnement signalé,
+crash d’application…
 
-Priority Rules:
-- Critique: Emails mentioning urgent issues, deadlines, blocked processes, or a system crash...
-- Élevé: Emails which raise concerning problems, with significant impacts, a high priority...
-- Modéré: Emails which prompt a minor problem, with limited impact, a ponctual issue...
-- Faible: Emails with simple questions, a non-urgent help request...
-- Anodine: Emails with just a remarque, an observation...
+Règles de priorité : 
+- Critique : impact majeur, opération impossible, nécessite intervention immédiate
+- Élevée : impact important, forte gêne, traitement prioritaire
+- Modérée : gêne notable mais non bloquante
+- Faible : problème mineur
+- Anodine : demande simple, aucun enjeu d’urgence
 
-Additional Rules:
-- The summary must be 20 words maximum.
-- Never invent information not present in the email.
-- If unclear, choose the lowest reasonable priority.
-
+Règles supplémentaires : - Le résumé doit faire 25 mots maximum. - Ne
+jamais inventer d’informations absentes de l’email. - En cas
+d’incertitude, choisir Anodine comme priorite.

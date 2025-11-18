@@ -15,3 +15,8 @@ CATEGORIES = [
     "Demande de support utilisateur",
     "Bug ou dysfonctionnement d’un service"
 ]
+
+SCOPES = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive"
+]

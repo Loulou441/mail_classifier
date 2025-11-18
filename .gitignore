@@ -3,3 +3,4 @@ token.json
 llm/__pycache__
 .env
 __pycache__
+service_account.json

@@ -47,12 +47,12 @@ f = open('./rules.txt', 'r')
 rules = f.read()
 f.close()
 
-emails = []
-with open('./dummy.json',"r", encoding="utf-8") as f:
+# emails = []
+# with open('./dummy.json',"r", encoding="utf-8") as f:
 
-    emails = json.load(f)['emails']
-# emails = get_mails_list()
-# print(emails)
+#     emails = json.load(f)['emails']
+emails = get_mails_list()
+
 if __name__ == "__main__":
     classifier = EmailClassifier(API_KEY,MODEL_NAME,False)
     classified = classifier.classify_emails(emails, prompt, rules)

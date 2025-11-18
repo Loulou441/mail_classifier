@@ -5,10 +5,7 @@ from google.oauth2.service_account import Credentials
 from config import *
 print('service account file',SERVICE_ACCOUNT_FILE)
 
-SCOPES = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive"
-]
+
 
 def get_client():
     """Initialise et retourne le client Google Sheets"""
