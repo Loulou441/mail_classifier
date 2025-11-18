@@ -1,11 +1,4 @@
-Les 5 catégories sont:
-- "Problème technique informatique", 
-- "Demande administrative", 
-- "Problème d'accès /Authentification", 
-- "Demande de support utilisateur", 
-- "Bug ou dysfonctionnement d'un service"
-
-Exemple d'expressions par catégorie:
+Voici les catégories avec des exemples:
 
 Problème technique informatique: ordinateur|portable|imprimante|souris|clavier|réseau|wifi|serveur|panne|erreur système|écran bleu|matériel|logiciel|crash|réinstallation|configuration|maintenance|connexion instable,
 Demande administrative: attestation|contrat|bulletin|paiement|facture|reçu|note de frais|déclaration|certificat|autorisation|dossier|inscription|demande officielle|formulaire|demande de document|congés|absence|régularisation|ressources humaines|administratif,
