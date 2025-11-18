@@ -1,77 +1,3 @@
-
-# from groq import Groq
-# from typing import List, Dict
-# import json
-
-
-# class EmailClassifier:
-
-#     def __init__(self, api_key: str,model_name:str):
-#         """Initialize Groq client."""
-#         self.client = Groq(api_key=api_key)
-#         self.model_name = model_name
-
-#     def classify_emails(self, emails: List[Dict[str, str]], prompt: str, rules: str) -> List[Dict[str, str]]:
-#         """
-#         Classify a list of emails based on prompt + rules.
-        
-#         Args:
-#             emails: List of {"subject": "...", "body": "..."}
-#             prompt: Content of the system prompt
-#             rules: Content of the rules to follow
-        
-#         Returns:
-#             List of {
-#                 "subject": ...,
-#                 "priority_level": ...,
-#                 "summary": ...
-#             }
-#         """
-#         results = []
-
-#         for email in emails:
-
-#             full_instruction = f"""
-# {prompt}
-
-# Here are the classification rules:
-# {rules}
-
-# Email to analyze:
-# Subject: {email['subject']}
-# Body: {email['body']}
-
-# Return a JSON dictionary with:
-# - subject
-# - priority_level (integer)
-# - summary (short 3–4 sentences)
-# """
-
-#             response = self.client.chat.completions.create(
-#                 model=self.model_name,
-#                 messages=[
-#                     {"role": "system", "content": "You are an email classification assistant."},
-#                     {"role": "user", "content": full_instruction}
-#                 ],
-#                 temperature=0.2,
-#             )
-
-#             try:
-#                 json_output = json.loads(response.choices[0].message["content"])
-#                 print(json_output)
-#             except json.JSONDecodeError:
-#                 json_output = {
-#                     "subject": email["subject"],
-#                     "priority_level": -1,
-#                     "summary": "ERROR: The model did not return valid JSON."
-#                 }
-
-#             results.append(json_output)
-
-#         return results
-
-
-
 import time
 import json
 from typing import List, Dict
@@ -96,7 +22,7 @@ def create_chat_completion_with_retry(client: Groq, model_name: str, messages: L
     return client.chat.completions.create(
         model=model_name,
         messages=messages,
-        temperature=temperature,
+        temperature=temperature
     )
 
 # ... The rest of your EmailClassifier class remains the same ...
@@ -128,18 +54,12 @@ class EmailClassifier:
 
             full_instruction = f"""
 {prompt}
-
-Here are the classification rules:
+Voici les règles de classification :
 {rules}
+E-mail à analyser :
+Objet : {email['subject']}
+Corps : {email['body']}
 
-Email to analyze:
-Subject: {email['subject']}
-Body: {email['body']}
-
-Return a JSON dictionary with:
-- subject
-- priority_level (integer)
-- summary (short 3–4 sentences)
 """
             
             if self.verbose:
@@ -153,13 +73,20 @@ Return a JSON dictionary with:
             ]
 
             response = None
+
             try:
-                response = create_chat_completion_with_retry(
-                    client=self.client,
-                    model_name=self.model_name,
-                    messages=messages,
-                    temperature=0.2
-                )
+                # response = create_chat_completion_with_retry(
+                #     client=self.client,
+                #     model_name=self.model_name,
+                #     messages=messages,
+                #     temperature=0.2
+                # )
+                
+                response = self.client.chat.completions.create(
+        model=self.model_name,
+        messages=messages,
+        temperature=0.2
+    )
             except RateLimitError as e:
                 if self.verbose:
                     print(f"FATAL: Rate limit exceeded after all retries for email: {email['subject']}")
