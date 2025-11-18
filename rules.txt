@@ -10,12 +10,12 @@ Exemple d'expressions par catégorie:
 Problème technique informatique: ordinateur|pc|portable|imprimante|scanner|souris|clavier|réseau|wifi|serveur|panne|erreur système|plantage|écran bleu|matériel|logiciel|crash|réinstallation|configuration|maintenance|connexion instable,
 Demande administrative: attestation|contrat|bulletin|paiement|facture|reçu|note de frais|déclaration|certificat|autorisation|validation|dossier|inscription|demande officielle|formulaire|demande de document|congés|absence|ordre de mission|régularisation|RH|ressources humaines|administratif,
 Problème d'accès /Authentification: mot de passe|connexion|login|identifiant|authentification|bloqué|verrouillé|accès refusé|impossible de se connecter|compte|2fa|otp|sso|oublié|session expirée|réinitialisation|reset,
-Demande de support utilisateur: aide|assistance|support|besoin d'aide|question|formation|information|guide|comment|explication|tutoriel|problème utilisateur|incident mineur|demande d'assistance|besoin de support|demande d'aide|clarification,
-Bug ou dysfonctionnement d'un service: bug|erreur|dysfonctionnement|incident|anomalie|fonction ne marche pas|service indisponible|problème avec|ne fonctionne pas|ko|hs|retour d’erreur|message d’erreur|comportement inattendu|blocage fonctionnel|crash application
+Demande de support utilisateur: aide|assistance|support|question|formation|information|guide|explication|tutoriel|problème utilisateur|incident mineur|demande d'aide|clarification,
+Bug ou dysfonctionnement d'un service: bug|erreur|dysfonctionnement|incident|anomalie|fonction ne marche pas|service indisponible|ne fonctionne pas|ko|hs|retour d’erreur|message d’erreur|comportement inattendu|blocage fonctionnel|crash application
 
 Exemple d'expression par niveau d'urgence:
 
-Critique: urgent|bloquant|production|panne totale|tout le monde|impossible de travailler|site indisponible|système à l'arrêt|crash total|incident majeur|impact global|urgence absolue,
+Critique: urgent|bloquant|panne totale|tout le monde|impossible|site indisponible|système à l'arrêt|crash total|incident majeur|impact global|urgence absolue,
 Élevé: important|impact élevé|problème récurrent|ralentissement général|impact fort|priorité haute|impact significatif,
 Modéré: ralentissement|souci|problème mineur|partiel|incomplet|impact limité|incident ponctuel|gêne occasionnelle|moyen impact,
 Faible: demande d'information|question simple|besoin d’aide|amélioration|suggestion|changement mineur|non bloquant|petit souci|non urgent,
