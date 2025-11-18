@@ -8,7 +8,7 @@ Notre mission: créer un classifier d'emails selon différentes catégories et l
 
 ## L'équipe
 
-Ce projet a été réalisé par TINHINANE Ourari, TESSIER Manon, TOUAT Abdenour et MOUSSA RABIOU Hamsatou.
+Ce projet a été réalisé par TINHINANE Ourari, TESSIER Manon, TOUAT Abdenour et MOUSSA RABIOU KALLA Hamsatou.
 
 ## Requirements
 Tous les requirements sont dans le fichier requirement.txt
