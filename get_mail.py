@@ -66,7 +66,7 @@ def get_message(service, msg_id, user_id='me'):
         "body": body
     }
 
-def main():
+def get_mails_list():
     service = get_service()
     all_ids = list_message_ids(service)
     print(f"Nombre total de mails : {len(all_ids)}")
@@ -82,6 +82,3 @@ def main():
             print(f"Erreur sur le mail {m['id']}: {e}")
 
     return emails_data
-
-if __name__ == '__main__':
-    main()

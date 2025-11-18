@@ -3,10 +3,10 @@ Tu dois (1) les classifier selon 5 catégories différentes contenues dans les r
 (2) identifier pour chaque email le niveau d'urgence du problème à régler toujours selon les règles qui t'ont été fournies,
 (3) en extraire 4 informations, à savoir le sujet du mail, sonniveau d'urgence, faire une synthèse du mail et donner sa catégorie selon le modèle suivant:
 {
-  "Sujet": "…",
-  "Urgence": "…",
-  "Synthèse": "…",
-  "Catégorie": "…",
+  "subject": "…",
+  "urgency": "…",
+  "summary": "…",
+  "category": "…",
 }
 
 Consignes : 

@@ -1,4 +1,3 @@
-"""
 Category rules:
 - Problème technique informatique: any problem about a computer, a server, wifi connexion...,
 - Demande administrative: Any HR request,
@@ -17,5 +16,4 @@ Additional Rules:
 - The summary must be 20 words maximum.
 - Never invent information not present in the email.
 - If unclear, choose the lowest reasonable priority.
-"""
 

@@ -1,6 +1,9 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from settings import SERVICE_ACCOUNT_FILE, SPREADSHEET_NAME
+
+# from settings import SERVICE_ACCOUNT_FILE, SPREADSHEET_NAME
+from config import *
+print('service account file',SERVICE_ACCOUNT_FILE)
 
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",

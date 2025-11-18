@@ -1,13 +1,17 @@
 import os
 from groq import Groq
 from dotenv import load_dotenv
-from email_classifier import EmailClassifier
+from LLM.email_classifier import EmailClassifier
 import json
-
+from get_mail import get_mails_list
+from sheets_writer import write_ticket
 load_dotenv()
+from config import *
 
-api_key = os.getenv("GROQ_API_KEY")
-model_name = os.getenv("MODEL_NAME")
+# api_key = os.getenv("GROQ_API_KEY")
+# model_name = os.getenv("MODEL_NAME")
+# spread_sheet_name = os.getenv("SPREADSHEET_NAME")
+# service_account = os.getenv('SERVICE_ACCOUNT_FILE')
 
 # prompt = """
 # You are an AI assistant specialized in analyzing and classifying emails.
@@ -34,21 +38,24 @@ model_name = os.getenv("MODEL_NAME")
 # """
 
 #Lire le prompt
-f = open('../prompt.txt', 'r')
+f = open('./prompt.txt', 'r')
 prompt = f.read()
 f.close()
 
 #Lire les règles
-f = open('../rules.txt', 'r')
+f = open('./rules.txt', 'r')
 rules = f.read()
 f.close()
 
 emails = []
-with open('../dummy.json',"r", encoding="utf-8") as f:
+with open('./dummy.json',"r", encoding="utf-8") as f:
 
-	emails = json.load(f)['emails']
-
+    emails = json.load(f)['emails']
+# emails = get_mails_list()
+# print(emails)
 if __name__ == "__main__":
-    classifier = EmailClassifier(api_key,model_name,True)
+    classifier = EmailClassifier(API_KEY,MODEL_NAME,False)
     classified = classifier.classify_emails(emails, prompt, rules)
     print(json.dumps(classified, indent=2))
+    for mail in classified:
+        write_ticket(mail)
