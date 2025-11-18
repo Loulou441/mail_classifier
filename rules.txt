@@ -1,8 +1,5 @@
-import re
-
 # Expressions par catégorie
 RULES = {
-
     "Problème technique informatique": r"(ordinateur|pc|portable|imprimante|scanner|souris|clavier|réseau|wifi|serveur|panne|erreur système|plantage|écran bleu|matériel|logiciel|crash|réinstallation|configuration|maintenance|connexion instable)",
     "Demande administrative": r"(attestation|contrat|bulletin|paiement|facture|reçu|note de frais|déclaration|certificat|autorisation|validation|dossier|inscription|demande officielle|formulaire|demande de document|congés|absence|ordre de mission|régularisation|RH|ressources humaines|administratif)",
     "Problème d'accès /Authentification": r"(mot de passe|connexion|login|identifiant|authentification|bloqué|verrouillé|accès refusé|impossible de se connecter|compte|2fa|otp|sso|oublié|session expirée|réinitialisation|reset)",
