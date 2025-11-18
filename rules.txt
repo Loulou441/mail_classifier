@@ -1,18 +1,21 @@
-Voici les catégories avec des exemples:
+"""
+Category rules:
+- Problème technique informatique: any problem about a computer, a server, wifi connexion...,
+- Demande administrative: Any HR request,
+- Problème d'accès /Authentification: Any authentification problem, lost password...
+- Demande de support utilisateur: Any help request,
+- Bug ou dysfonctionnement d'un service: Any raised bug or malfunction, application crash...
 
-Problème technique informatique: ordinateur|portable|imprimante|souris|clavier|réseau|wifi|serveur|panne|erreur système|écran bleu|matériel|logiciel|crash|réinstallation|configuration|maintenance|connexion instable,
-Demande administrative: attestation|contrat|bulletin|paiement|facture|reçu|note de frais|déclaration|certificat|autorisation|dossier|inscription|demande officielle|formulaire|demande de document|congés|absence|régularisation|ressources humaines|administratif,
-Problème d'accès /Authentification: mot de passe|connexion|identifiant|authentification|bloqué|verrouillé|accès refusé|impossible de se connecter|compte|2fa|otp|sso|oublié|session expirée|réinitialisation|reset,
-Demande de support utilisateur: aide|assistance|support|question|formation|information|guide|explication|tutoriel|problème utilisateur|incident mineur|clarification,
-Bug ou dysfonctionnement d'un service: bug|erreur|dysfonctionnement|incident|anomalie|service indisponible|ne fonctionne pas|ko|hs|retour d’erreur|message d’erreur|comportement inattendu|blocage fonctionnel|crash application
+Priority Rules:
+- Critique: Emails mentioning urgent issues, deadlines, blocked processes, or a system crash...
+- Élevé: Emails which raise concerning problems, with significant impacts, a high priority...
+- Modéré: Emails which prompt a minor problem, with limited impact, a ponctual issue...
+- Faible: Emails with simple questions, a non-urgent help request...
+- Anodine: Emails with just a remarque, an observation...
 
-Exemple d'expression par niveau d'urgence:
-
-Critique: urgent|panne totale|tout le monde|site indisponible|système à l'arrêt|crash total|incident majeur|impact global|urgence absolue,
-Élevé: important|impact élevé|problème récurrent|ralentissement général|impact fort|priorité haute|impact significatif,
-Modéré: ralentissement|souci|problème mineur|partiel|incomplet|impact limité|incident ponctuel|gêne occasionnelle|moyen impact,
-Faible: demande d'information|question simple|besoin d’aide|amélioration|suggestion|changement mineur|non bloquant|petit souci|non urgent,
-Anodine: remarque|commentaire|observation|remerciement|aucun problème|simple
-
-
+Additional Rules:
+- The summary must be 20 words maximum.
+- Never invent information not present in the email.
+- If unclear, choose the lowest reasonable priority.
+"""
 
