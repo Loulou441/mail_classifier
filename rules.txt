@@ -16,7 +16,7 @@ Bug ou dysfonctionnement d'un service: bug|erreur|dysfonctionnement|incident|ano
 Exemple d'expression par niveau d'urgence:
 
 Critique: urgent|bloquant|production|panne totale|tout le monde|impossible de travailler|site indisponible|système à l'arrêt|crash total|incident majeur|impact global|urgence absolue,
-Élevé: important|impact élevé|problème récurrent|ralentissement général|impact fort|priorité haute|affecte plusieurs utilisateurs|impact significatif,
+Élevé: important|impact élevé|problème récurrent|ralentissement général|impact fort|priorité haute|impact significatif,
 Modéré: ralentissement|souci|problème mineur|partiel|incomplet|impact limité|incident ponctuel|gêne occasionnelle|moyen impact,
 Faible: demande d'information|question simple|besoin d’aide|amélioration|suggestion|changement mineur|non bloquant|petit souci|non urgent,
 Anodine: remarque|commentaire|observation|remerciement|aucun problème|simple
